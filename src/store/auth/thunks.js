@@ -3,6 +3,7 @@
 import { ClassSharp } from "@mui/icons-material";
 import { loginWithEmailPassword, logoutFirebase, registerUserWithEmailAndPassword, singInWithGoogle } from "../../firebase/providers";
 import { checkingCredentials, login, logout } from "./";
+import { clearNotesLogout } from "../journal/journalSlice";
 
 export const checkingAuthentication = () => {
     return async( dispatch ) => {
@@ -56,6 +57,7 @@ export const startLogout = () => {
     return async (dispatch) => {
 
         await logoutFirebase()
+        dispatch(clearNotesLogout())
         dispatch(logout())
 
     }
