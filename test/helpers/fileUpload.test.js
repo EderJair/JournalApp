@@ -30,7 +30,6 @@ describe('Pruebas en fileUpload', () => {
         const cloudResp = await cloudinary.api.delete_resources([imageId], {
             resource_type: 'image'
         })
-        console.log({cloudResp})
 
 
 
